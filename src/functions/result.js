@@ -1,18 +1,14 @@
-function result(para1,para2){
-    let ret = 'same',win = 'YOU WIN'
-    if(para1 == para2){
-        return 'same'
+export function result(para1,para2){
+    let ret ,win = 'YOU WIN', lose = 'YOU LOSE', nul = 'MATH NUL';
+    if(para1 === para2){
+        ret = nul;
     }
-    if(para1 == 'rock' && para2 == 'scissors'){
-        ret = 'YOU WIN'
+    else if(para1 == 'rock' && para2 == 'scissors'|| para1 == 'scissors' && para2 == 'paper'  || para1 == 'paper' && para2 == 'rock'){
+        ret = win;
     }
-    if(para1 == 'scissors' && para2 == 'paper'){
-        ret = 'win'
+    else{
+        ret = lose;
     }
-    if(para1 == 'paper' && para2 == 'rock'){
-        ret = 'win'
-    }else{
-        ret = 'lose'
-    }
+    return ret;
 
 }

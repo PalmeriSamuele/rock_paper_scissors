@@ -19,7 +19,7 @@
   height: 170px;
   width: 170px;
   border-radius: 50%;
-  border: 2rem solid red;
+  border: 1.6rem solid red;
   background-color: white;
   cursor: pointer;
 }
@@ -31,7 +31,8 @@
 .game_box {
   position: relative;
   width: 70vw;
-  height: 75vh;
+  height: 70vh;
+  overflow: hidden;
 }
 .game_box .paper, .game_box .rock, .game_box .scissor {
   position: absolute;
@@ -48,34 +49,103 @@
   right: 23%;
 }
 .ftf_box {
-  width: 50vw;
-  height: 50vh;
+  width: 75vw;
+  padding: 2rem;
 }
 .ftf_box .ourMove {
   transform: scale(1.4);
   animation: pc_move 0.6s;
+  border-radius: 50%;
+  position: relative;
+}
+.ftf_box .ourMove::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -20%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 16px;
+  border-radius: 70%;
+  background-color: #272525;
+  filter: blur(6px);
+}
+.ftf_box .result_modul {
+  opacity: 0;
+  animation: resultat_anim 0.6s 1.2s forwards;
 }
 .ftf_box .toAnimateMove {
   transform: scale(0);
-  animation: pc_move 0.6s 1.2s forwards;
+  animation: pc_move 0.6s 1s forwards;
+  border-radius: 50%;
+  position: relative;
+}
+.ftf_box .toAnimateMove::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -20%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 16px;
+  border-radius: 70%;
+  background-color: #272525;
+  filter: blur(6px);
 }
 .ftf_box .playbutton {
   padding: 0.5rem 4rem;
   border-radius: 10px;
+  color: #dd3d59;
+  letter-spacing: 4px;
+  border: none;
 }
 
 @keyframes pc_move {
   0% {
+    transform: translateY(-100) scale(2.4);
     opacity: 0;
-    transform: scale(2.4);
   }
   100% {
     opacity: 1;
-    transform: scale(1.4);
+    transform: translateY(0) scale(1.4);
   }
 }
+@keyframes resultat_anim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.rules_box {
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px 3rem;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  cursor: pointer;
+}
+
+.rule_modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  border-radius: 10px;
+  box-shadow: -3px 1px 30px 2000px rgba(0, 0, 0, 0.43);
+  display: none;
+  transition: opacity 0.6s ease;
+}
+.rule_modal .close_icon {
+  cursor: pointer;
+}
+
 body {
-  background-color: #171d3f;
+  background: rgb(65, 70, 95);
+  background: radial-gradient(circle, rgb(65, 70, 95) 26%, rgb(29, 36, 71) 98%);
   font-family: "Barlow Condensed", sans-serif;
 }
 

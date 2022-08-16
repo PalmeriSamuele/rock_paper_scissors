@@ -1,23 +1,64 @@
 .ftf_box
-    width: 50vw
-    height: 50vh
+    width: 75vw
+
+    padding: 2rem
     .ourMove
         transform: scale(1.4)
         animation: pc_move 0.6s 
+        border-radius: 50%
+        position: relative
+        &::after
+            content: ''
+            position: absolute
+            left: 50%
+            bottom: -20%
+            transform: translateX(-50%)
+            width: 60%
+            height: 16px
+            border-radius: 70%
+            background-color: #272525
+            filter: blur(6px)
+    .result_modul
+        opacity: 0
+        animation: resultat_anim 0.6s  1.2s forwards
+        
     .toAnimateMove
         transform: scale(0)
-        animation: pc_move 0.6s  1.2s forwards
+        animation: pc_move 0.6s  1s forwards
+      
+        border-radius: 50%
+        position: relative
+        &::after
+            content: ''
+            position: absolute
+            left: 50%
+            bottom: -20%
+            transform: translateX(-50%)
+            width: 60%
+            height: 16px
+            border-radius: 70%
+            background-color: #272525
+            filter: blur(6px)
 
     .playbutton
         padding: 0.5rem 4rem
         border-radius: 10px
+        color: #dd3d59
+        letter-spacing: 4px
+        border: none
 
 
 @keyframes pc_move 
     0%
+        transform: translateY(-100) scale(2.4)
         opacity: 0
-        transform: scale(2.4)
     100%
         opacity: 1
-        transform: scale(1.4)
+        transform: translateY(0) scale(1.4)
+@keyframes resultat_anim
+    0%
+        opacity: 0
 
+    100%
+        opacity: 1
+   
