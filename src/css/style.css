@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;400;600&display=swap");
+.header {
+  width: 55vw;
+  height: 22vh;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.header .score_count_box {
+  border-radius: 10px;
+  width: 18%;
+  color: #444b8c;
+}
+.header .score_count_box .score_count {
+  font-size: 45px;
+  color: #58556b;
+}
+
+.capsule_box {
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+  border: 2rem solid red;
+  background-color: white;
+  cursor: pointer;
+}
+.capsule_box .card-img {
+  z-index: 2;
+  width: 45%;
+}
+
+.game_box {
+  position: relative;
+  width: 70vw;
+  height: 75vh;
+}
+.game_box .paper, .game_box .rock, .game_box .scissor {
+  position: absolute;
+}
+.game_box .paper {
+  left: 23%;
+  top: 8%;
+}
+.game_box .rock {
+  bottom: 8%;
+}
+.game_box .scissor {
+  top: 8%;
+  right: 23%;
+}
+.ftf_box {
+  width: 50vw;
+  height: 50vh;
+}
+.ftf_box .ourMove {
+  transform: scale(1.4);
+  animation: pc_move 0.6s;
+}
+.ftf_box .toAnimateMove {
+  transform: scale(0);
+  animation: pc_move 0.6s 1.2s forwards;
+}
+.ftf_box .playbutton {
+  padding: 0.5rem 4rem;
+  border-radius: 10px;
+}
+
+@keyframes pc_move {
+  0% {
+    opacity: 0;
+    transform: scale(2.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+body {
+  background-color: #171d3f;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+/*# sourceMappingURL=style.css.map */
